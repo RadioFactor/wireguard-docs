@@ -1,0 +1,11 @@
+#generate public and private keys for the server
+
+sudo -i
+umask 077
+
+wg genkey > server_private.key
+wg pubkey < server_private.key > server_public.key
+
+#generate public and private keys for the client (to do on the client device)
+wg genkey > client_private.key
+wg pubkey < client_private.key > client_public.key
